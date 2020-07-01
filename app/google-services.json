@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "738246649609",
+    "firebase_url": "https://pandemian-2bd4a.firebaseio.com",
+    "project_id": "pandemian-2bd4a",
+    "storage_bucket": "pandemian-2bd4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:738246649609:android:1134ca999cef2b712d95d8",
+        "android_client_info": {
+          "package_name": "com.dark_tech.pandemian"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "738246649609-45o63pk9q015f9ntuphc4oq8v4ev8g4g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBTZOh-3VVKfEdQGRCK1NIcXhX7we4VZsM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "738246649609-45o63pk9q015f9ntuphc4oq8v4ev8g4g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

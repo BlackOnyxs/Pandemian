@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Pandemian</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="btn_locations">Ubicaciones</string>
+    <string name="btn_add">Agregar Paciente</string>
+    <string name="datos_personales">Datos Personales</string>
+    <string name="nombre">Nombre</string>
+    <string name="ingresa_tu_nombre">Ingresa tu nombre</string>
+    <string name="cedula">Cédula</string>
+    <string name="ingresa_tu_cedula">Ingresa tu cédula</string>
+    <string name="sex">Selecciona tu sexo</string>
+    <string name="rb_masculino">Masculino</string>
+    <string name="rb_femenino">Femenino</string>
+    <string name="age">Edad</string>
+    <string name="btn_next">Siguiente</string>
+    <string name="symptoms">Síntomas</string>
+    <string name="data_required_error">Este campo es requerido.</string>
+    <string name="Centers">Centros de Salud</string>
+</resources>
