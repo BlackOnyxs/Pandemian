@@ -3,4 +3,8 @@
     <color name="colorPrimary">#4caf50</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
+
+    <color name="astrazeneca">#902466</color>
+    <color name="pfitzer">#0190FF</color>
+    <color name="moderna">#C83344</color>
 </resources>

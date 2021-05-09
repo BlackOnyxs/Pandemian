@@ -24,6 +24,15 @@ public class Utils {
         }
         return isValid;
     }
+    public static boolean verifiedField( AppCompatEditText edt, Context context ) {
+        boolean isValid = true;
+        if ( edt.getText().toString().trim().isEmpty() ) {
+            edt.setError(context.getString(R.string.data_required_error));
+            isValid = false;
+        }
+
+        return isValid;
+    }
 
     public static ArrayList<Symptom> getSymptoms(){
         ArrayList<Symptom> symptoms = new ArrayList<>();
@@ -49,18 +58,18 @@ public class Utils {
         ArrayList<Location> locations = new ArrayList<>();
 
         Location c = new Location();
-        c.setName("Luis 'Chicho' Fábrega");
-        c.setDescription("Some description");
+        c.setNickName("Luis 'Chicho' Fábrega");
+        c.setAbout("Some description");
         c.setLocation(new LatLng(8.077881, -80.931284));
 
         Location d = new Location();
-        d.setName("Columbia");
-        d.setDescription("Some description");
+        d.setNickName("Columbia");
+        d.setAbout("Some description");
         d.setLocation(new LatLng(8.077881, -80.931284));
 
         Location e = new Location();
-        e.setName("Example");
-        e.setDescription("Some description");
+        e.setNickName("Example");
+        e.setAbout("Some description");
         e.setLocation(new LatLng(8.077881, -80.931284));
 
         locations.add(c);

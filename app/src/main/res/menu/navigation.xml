@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/report"
+        android:title="@string/menu_report"
+        android:icon="@drawable/menu_report"/>
+    <item
+        android:id="@+id/location"
+        android:title="@string/menu_location"
+        android:icon="@drawable/menu_location"/>
+    <item
+        android:id="@+id/vaccine"
+        android:title="@string/menu_vaccine"
+        android:icon="@drawable/menu_vaccine"/>
+</menu>

@@ -3,18 +3,18 @@ package com.dark_tech.pandemian.pojo;
 public class Location {
 
     private String id;
-    private String name;
-    private String description;
+    private String nickName;
+    private String about;
     private String type;
     private LatLng location;
 
     public Location() {
     }
 
-    public Location(String id, String name, String description, String type, LatLng location) {
+    public Location(String id, String nickName, String about, String type, LatLng location) {
         this.id = id;
-        this.name = name;
-        this.description = description;
+        this.nickName = nickName;
+        this.about = about;
         this.type = type;
         this.location = location;
     }
@@ -27,20 +27,20 @@ public class Location {
         this.id = id;
     }
 
-    public String getName() {
-        return name;
+    public String getNickName() {
+        return nickName;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
-    public String getDescription() {
-        return description;
+    public String getAbout() {
+        return about;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     public String getType() {

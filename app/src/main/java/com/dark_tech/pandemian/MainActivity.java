@@ -1,43 +1,61 @@
 package com.dark_tech.pandemian;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
-import android.content.Intent;
+import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
+import android.view.MenuItem;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.TimeZone;
+import com.dark_tech.pandemian.hospital.HospitalFragment;
+import com.dark_tech.pandemian.report.PersonalFragment;
+import com.dark_tech.pandemian.vaccine.VaccineFragment;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener {
-    private Button btnLocation, btnAdd;
+public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener {
+    private BottomNavigationView mNavigation;
+
+    private Fragment currentFragment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-         btnLocation = findViewById(R.id.btnLocation);
-         btnAdd = findViewById(R.id.btnAdd);
 
-         btnLocation.setOnClickListener(this);
-         btnAdd.setOnClickListener(this);
+        mNavigation = findViewById(R.id.navigation);
+
+        mNavigation.setOnNavigationItemSelectedListener(this);
+
+        currentFragment = new PersonalFragment();
+        loadFragment( currentFragment );
     }
 
+
+    @SuppressLint("NonConstantResourceId")
     @Override
-    public void onClick(View v) {
-        Intent intent = null;
-        switch (v.getId()){
-            case (R.id.btnAdd):
-                intent = new Intent(this, PatientActivity.class);
+    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.report:
+                currentFragment = new PersonalFragment();
                 break;
-            case (R.id.btnLocation):
-                intent = new Intent(this, HospitalActivity.class);
+            case R.id.location:
+                currentFragment = new HospitalFragment();
+                break;
+            case R.id.vaccine:
+                currentFragment = new VaccineFragment();
                 break;
         }
-        startActivity(intent);
+
+        return loadFragment( currentFragment );
     }
 
-
+    private boolean loadFragment(Fragment currentFragment) {
+        if (currentFragment != null){
+            getSupportFragmentManager().beginTransaction()
+                        .replace(R.id.fragment_container, currentFragment)
+                        .addToBackStack(null)
+                        .commit();
+        }
+        return false;
+    }
 }
