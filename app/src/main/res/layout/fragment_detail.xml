@@ -1,44 +1,308 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginBottom="35dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:fillViewport="true"
     tools:context=".vaccine.DetailFragment">
 
-    <ImageView
-        android:id="@+id/img_title"
-        android:layout_width="250dp"
-        android:layout_height="150dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/astrazeneca"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/tvDescription"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_title"
-        android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:maxHeight="200dp"
-        />
+        <ImageView
+            android:id="@+id/img_title"
+            android:layout_width="250dp"
+            android:layout_height="150dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/pfitzer"
+            />
+        <TextView
+            android:id="@+id/tvNameTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/img_title"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="Nombre:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"/>
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="@id/tvDescription"
-        app:layout_constraintTop_toBottomOf="@id/tvDescription"
-        android:layout_marginBottom="45dp"
-        android:text="@string/vaccine_link"
-        android:textStyle="bold"
-        android:textSize="18sp"
-        android:clickable="true"
-        android:focusable="true"
-        />
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvNameTitle"
+            app:layout_constraintTop_toBottomOf="@id/img_title"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:text="BNT162b2."
+            android:textStyle="bold"
+            android:textSize="16sp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tvBrandTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvNameTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvNameTitle"
+            android:layout_marginTop="20dp"
+            android:text="Fabricante:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvBrand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvBrandTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvNameTitle"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Pfizer, Inc., y BioNTech."
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvVaccineTypeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvBrandTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvBrandTitle"
+            android:layout_marginTop="20dp"
+            android:text="Tipo de vacuna:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvVaccineType"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvVaccineTypeTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvBrandTitle"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:text="mRNA."
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvCantTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvVaccineTypeTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvVaccineTypeTitle"
+            android:layout_marginTop="20dp"
+            android:text="Cantidad de dosis:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvCant"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvCantTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvVaccineTypeTitle"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:text="2 dosis 21 días de diferencia."
+            android:textStyle="bold"
+            android:textSize="16sp"/>
+
+        <TextView
+            android:id="@+id/tvSupplyTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvCantTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvCantTitle"
+            android:layout_marginTop="20dp"
+            android:text="Modo de administración:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvSupply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSupplyTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvSupplyTitle"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Inyección en el músculo de la parte superior del brazo."
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="16sp"
+            tools:ignore="TextViewEdits" />
+
+        <TextView
+            android:id="@+id/tvNotContentTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSupply"
+            app:layout_constraintTop_toBottomOf="@id/tvSupply"
+            android:layout_marginTop="20dp"
+            android:text="NO contiene:"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvNotContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/tvNotContentTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvSupply"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="10dp"
+            android:text="huevos, conservantes, látex."
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="16sp"
+            tools:ignore="TextViewEdits" />
+        <TextView
+            android:id="@+id/tvSuggestTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSupply"
+            app:layout_constraintTop_toBottomOf="@id/tvNotContentTitle"
+            android:layout_marginTop="20dp"
+            android:text="¿Quienes deben vacunarse?"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvSuggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvSuggestTitle"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:text="La vacuna de Pfizer-BioNTech se recomienda para personas de 16 años o más"
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="16sp"
+            tools:ignore="TextViewEdits" />
+
+        <TextView
+            android:id="@+id/tvNotSuggestTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSupply"
+            app:layout_constraintTop_toBottomOf="@id/tvSuggest"
+            android:layout_marginTop="20dp"
+            android:text="¿Quién NO debería vacunarse con estas vacunas?"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvNotSuggest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvNotSuggestTitle"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Si ha tenido una reacción alérgica grave (anafilaxia) o una reacción alérgica inmediata, aunque no sea grave:
+a alguno de los ingredientes de la vacuna ARNm contra el COVID-19 (como el polietilenglicol), no debería administrarse la vacuna ARNm contra el COVID-19*.
+tras recibir la primera dosis de la vacuna, no debería recibir la segunda dosis de ninguna de las vacunas ARNm contra el COVID-19.
+"
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="16sp"
+            tools:ignore="TextViewEdits" />
+
+        <TextView
+            android:id="@+id/tvEffectsTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvNotSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvNotSuggest"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Posibles Efectos Secundarios:"
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="18sp"
+            tools:ignore="TextViewEdits"
+            android:textColor="@android:color/black"
+            />
+
+        <TextView
+            android:id="@+id/tvEffects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvEffectsTitle"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="5dp"
+            android:text="Cansancio, dolor de cabeza, dolor muscular, ecalofrios, fiebre, náusesas."
+            android:textStyle="bold"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            android:textSize="16sp"
+            tools:ignore="TextViewEdits"/>
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvNotSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/tvEffects"
+            android:layout_marginBottom="45dp"
+            android:layout_marginTop="15dp"
+            android:text="Estos efectos secundarios suelen aparecer al cabo de uno o dos días después de vacunarse. Los efectos secundarios podrían afectar su capacidad para completar sus actividades cotidianas, pero deberían desaparecer en pocos días."
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:inputType="textMultiLine"
+            android:maxWidth="350dp"
+            tools:ignore="TextViewEdits" />
+
+        <TextView
+            android:id="@+id/tvInterest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@id/tvNotSuggestTitle"
+            app:layout_constraintTop_toBottomOf="@id/description"
+            android:layout_marginBottom="45dp"
+            android:text="@string/vaccine_link"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:clickable="true"
+            android:focusable="true"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

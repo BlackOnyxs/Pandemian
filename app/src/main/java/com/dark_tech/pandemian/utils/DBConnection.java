@@ -9,23 +9,25 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DBConnection {
-    private Connection connection;
-    private static final String IP = "192.168.0.4";
-    private static final String PORT = "1433";
-    private static final String CLASSES = "net.sourceforge.jtds.jdbc.Driver";
-    private static final String DATABASE = "Pandemian";
-    private static final String USERNAME = "admin";
-    private static final String PASSWORD = "123456";
-    private static final String URL = "jdbc:jtds:sqlserver://"+IP+";"+PORT+"/"+DATABASE;
+    private Connection conn;
+    private String username, pass, ip, port, database;
 
     @SuppressLint("NewApi")
     public Connection connectionClass(){
+        ip = "192.168.0.4";
+        port = "1433";
+        database = "Pandemian";
+        username = "admin";
+        pass = "123456";
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
+        Connection connection = null;
+        String connectionString = null;
 
         try {
-            Class.forName(CLASSES);
-            connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
+            Class.forName( "net.sourceforge.jtds.jdbc.Driver");
+            connectionString ="jdbc:jtds:sqlserver://"+ip+":"+port+";"+"database="+database+";user="+username+";password="+pass+";";
+            connection = DriverManager.getConnection(connectionString);
             Log.i("DB", "Conexion establecida");
         }catch (ClassNotFoundException | SQLException e){
             e.printStackTrace();
