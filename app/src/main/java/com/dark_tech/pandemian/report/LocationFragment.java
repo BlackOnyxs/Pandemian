@@ -34,6 +34,8 @@ import com.google.android.gms.location.LocationServices;
 import java.util.Objects;
 
 public class LocationFragment extends Fragment {
+
+    // Ubicacion del Usuario
     private static final int REQUEST_LOCATION_CODE = 500;
     private ProgressBar mProgressBar;
 

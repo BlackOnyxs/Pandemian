@@ -16,7 +16,7 @@ import com.dark_tech.pandemian.pojo.Report;
 import com.dark_tech.pandemian.utils.Utils;
 
 public class PersonalFragment extends Fragment {
-
+// Nombre y cedula
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

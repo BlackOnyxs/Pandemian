@@ -14,7 +14,7 @@ import com.dark_tech.pandemian.R;
 
 public class VaccineWebFragment extends Fragment {
 
-
+    // Web Incrustada
 
 
     @Override

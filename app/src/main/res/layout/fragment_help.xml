@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/img_title"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -45,7 +45,7 @@
             android:id="@+id/rbYes"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:checked="true"
+
             android:text="@string/rb_yes"
             android:textSize="18sp" />
 
@@ -63,7 +63,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/rb_never"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            android:checked="true"
+            />
     </RadioGroup>
 
     <androidx.appcompat.widget.AppCompatTextView
@@ -79,23 +81,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rg" />
 
-    <RadioGroup
-        android:id="@+id/rgHelpType"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="vertical"
-        android:layout_marginStart="20dp"
-        app:layout_constraintStart_toStartOf="@id/tvTypeHelp"
-        app:layout_constraintTop_toBottomOf="@id/tvTypeHelp">
-
         <RadioButton
             android:id="@+id/rbVale"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:checked="true"
             android:text="@string/rb_vale"
-            android:textSize="18sp" />
+            android:layout_marginStart="20dp"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvTypeHelp"
+            app:layout_constraintTop_toBottomOf="@id/tvTypeHelp"/>
 
         <RadioButton
             android:id="@+id/rbBack"
@@ -103,7 +98,10 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/rb_back"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvTypeHelp"
+            app:layout_constraintTop_toBottomOf="@id/rbVale"
+            />
 
         <RadioButton
             android:id="@+id/rbCard"
@@ -111,8 +109,11 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:text="@string/rb_card"
-            android:textSize="18sp" />
-    </RadioGroup>
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="@id/tvTypeHelp"
+            app:layout_constraintTop_toBottomOf="@id/rbBack"
+            />
+
 
     <Button
         android:id="@+id/btn_next"
@@ -120,7 +121,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/rgHelpType"
+        app:layout_constraintTop_toBottomOf="@id/rbCard"
         android:layout_marginTop="20dp"
         android:textColor="@android:color/white"
         android:background="@drawable/button_background"

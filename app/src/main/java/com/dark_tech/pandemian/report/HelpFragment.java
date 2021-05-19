@@ -15,6 +15,7 @@ import com.dark_tech.pandemian.R;
 import com.dark_tech.pandemian.ReportSingleton;
 
 public class HelpFragment extends Fragment {
+    // Si recibe ayuda del gobierno y el tipo de ayuda
 
     private static final String HELP_YES = "Sí";
     private static final String HELP_SOMETIMES = "Aveces";
@@ -33,21 +34,46 @@ public class HelpFragment extends Fragment {
         final RadioButton rbYes = view.findViewById(R.id.rbYes);
         final RadioButton rbSometime = view.findViewById(R.id.rbSometime);
         RadioButton rbNever = view.findViewById(R.id.rbNever);
-        RadioGroup rg= view.findViewById(R.id.rgHelpType);
+//        RadioGroup rg= view.findViewById(R.id.rgHelpType);
 
 
-        RadioButton rbVale = view.findViewById(R.id.rbVale);
-        RadioButton rbBack = view.findViewById(R.id.rbBack);
-        RadioButton rbCard = view.findViewById(R.id.rbCard);
+        final RadioButton rbVale = view.findViewById(R.id.rbVale);
+        final RadioButton rbBack = view.findViewById(R.id.rbBack);
+        final RadioButton rbCard = view.findViewById(R.id.rbCard);
 
         final ReportSingleton reportSingleton = ReportSingleton.getInstance();
 
-        if ( rbNever.isChecked() ){
-            rbBack.setEnabled( false );
-            rbVale.setEnabled( false );
-            rbCard.setEnabled( false );
-            reportSingleton.getReport().setHelp(HELP_NEVER);
-        }else if ( rbYes.isChecked() ){
+        rbNever.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rbBack.setEnabled( false );
+                rbVale.setEnabled( false );
+                rbCard.setEnabled( false );
+
+                reportSingleton.getReport().setHelp(HELP_NEVER);
+            }
+        });
+        rbYes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rbBack.setEnabled( true );
+                rbVale.setEnabled( true );
+                rbCard.setEnabled( true );
+
+                reportSingleton.getReport().setHelp(HELP_NEVER);
+            }
+        });
+        rbSometime.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rbBack.setEnabled( true );
+                rbVale.setEnabled( true );
+                rbCard.setEnabled( true );
+
+            }
+        });
+
+      if ( rbYes.isChecked() ){
             reportSingleton.getReport().setHelp(HELP_YES);
         }else if ( rbSometime.isChecked() ){
             reportSingleton.getReport().setHelp(HELP_SOMETIMES);

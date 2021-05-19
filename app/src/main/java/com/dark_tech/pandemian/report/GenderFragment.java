@@ -19,6 +19,7 @@ import com.dark_tech.pandemian.pojo.Report;
 
 public class GenderFragment extends Fragment implements SeekBar.OnSeekBarChangeListener {
 
+//    TODO: Genero y edad
     private AppCompatTextView tvAge;
     private static final String SEX_MALE = "Masculino";
     private static final String SEX_FEMALE = "Femenino";

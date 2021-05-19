@@ -20,7 +20,7 @@ public class SuggestionFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
+        // Si esta vacunado y si se quiere vacunar
         View view = inflater.inflate(R.layout.fragment_suggestion, container, false);
         Button btn_next = view.findViewById(R.id.btn_next);
         final RadioButton rbNo = view.findViewById(R.id.rbNo);

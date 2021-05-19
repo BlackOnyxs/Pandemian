@@ -19,6 +19,8 @@ import com.dark_tech.pandemian.utils.Utils;
 
 public class WorkFragment extends Fragment {
 
+    // Si trabaja
+
     private static final String WORK_LAB = "Laborando";
     private static final String WORK_SUS = "Suspendido";
     private static final String WORK_UM = "Desempleado";

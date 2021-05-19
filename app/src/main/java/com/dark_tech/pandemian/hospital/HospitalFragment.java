@@ -42,7 +42,7 @@ public class HospitalFragment extends Fragment implements HospitalClickLister {
         rvHospitals.setLayoutManager(manager);
         rvHospitals.setAdapter(hospitalAdapter);
 
-        try {
+     /*   try {
             if ( dbConnection == null ){
                 dbConnection = new DBConnection();
                 connection = dbConnection.connectionClass();
@@ -59,7 +59,7 @@ public class HospitalFragment extends Fragment implements HospitalClickLister {
         }catch (Exception e){
             Log.e("DB", e.getMessage());
             e.printStackTrace();
-        }
+        }*/
 
         return view;
     }
@@ -79,5 +79,10 @@ public class HospitalFragment extends Fragment implements HospitalClickLister {
                     .addToBackStack(null)
                     .commit();
         }
+    }
+
+    private void loadHospitals(){
+        Location location = new Location();
+        location.setNickName("Luis Chicho Fabrega");
     }
 }

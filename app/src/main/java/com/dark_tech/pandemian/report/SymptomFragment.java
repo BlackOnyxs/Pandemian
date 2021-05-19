@@ -31,6 +31,7 @@ import java.util.TimeZone;
 
 public class SymptomFragment extends Fragment implements SymptomsClickLister {
 
+    // Grupo de sintomas
     private SymptomsAdapter mSymptomsAdapter;
     private RecyclerView mRvSymptoms;
     private Button mBtnSubmit;

@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.dark_tech.pandemian.R;
+import com.dark_tech.pandemian.pojo.Vacuna;
 
 
 public class DetailFragment extends Fragment {
@@ -38,5 +39,11 @@ public class DetailFragment extends Fragment {
         //TODO: Load Brand Data by id and set data to the view
 
         return view;
+    }
+
+
+    public void loadPfitzer(){
+        Vacuna pfitzer = new Vacuna();
+        pfitzer.setMarca("Pfitzer");
     }
 }
