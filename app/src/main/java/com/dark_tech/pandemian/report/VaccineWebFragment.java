@@ -13,8 +13,11 @@ import com.dark_tech.pandemian.R;
 
 
 public class VaccineWebFragment extends Fragment {
+    private String currentUrl;
 
-    // Web Incrustada
+  public VaccineWebFragment(String url){
+      currentUrl = url;
+  }
 
 
     @Override
@@ -23,7 +26,9 @@ public class VaccineWebFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_vaccine_web, container, false);
         WebView web = view.findViewById(R.id.webVaccine);
-        web.loadUrl("https://www.panamasolidario.gob.pa/pag/vacunas");
+        web.loadUrl(currentUrl);
+
         return view;
     }
+
 }

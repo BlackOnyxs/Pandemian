@@ -1,21 +1,22 @@
 package com.dark_tech.pandemian.pojo;
 
+import android.graphics.drawable.Drawable;
+
 public class Location {
 
     private String id;
     private String nickName;
-    private String about;
-    private String type;
+    private String phone;
     private LatLng location;
+    private Drawable ref;
 
     public Location() {
     }
 
-    public Location(String id, String nickName, String about, String type, LatLng location) {
+    public Location(String id, String nickName, String phone, LatLng location) {
         this.id = id;
         this.nickName = nickName;
-        this.about = about;
-        this.type = type;
+        this.phone = phone;
         this.location = location;
     }
 
@@ -35,20 +36,12 @@ public class Location {
         this.nickName = nickName;
     }
 
-    public String getAbout() {
-        return about;
+    public String getPhone() {
+        return phone;
     }
 
-    public void setAbout(String about) {
-        this.about = about;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 
     public LatLng getLocation() {
@@ -57,5 +50,13 @@ public class Location {
 
     public void setLocation(LatLng location) {
         this.location = location;
+    }
+
+    public Drawable getRef() {
+        return ref;
+    }
+
+    public void setRef(Drawable ref) {
+        this.ref = ref;
     }
 }

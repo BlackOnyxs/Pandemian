@@ -8,6 +8,7 @@ public class Report {
     private String name;
     private String age;
     private String cip;
+    private String phone;
     private String sex;
     private String help;
     private String helpType;
@@ -22,11 +23,12 @@ public class Report {
     public Report() {
     }
 
-    public Report(String id, String name, String age, String cip, String sex, String help, String helpType, String workStatus, String workName, boolean vaccineStatus, boolean vaccineInterest, LatLng location, ArrayList<Symptom> symptoms, String date) {
+    public Report(String id, String name, String age, String cip, String phone, String sex, String help, String helpType, String workStatus, String workName, boolean vaccineStatus, boolean vaccineInterest, LatLng location, ArrayList<Symptom> symptoms, String date) {
         this.id = id;
         this.name = name;
         this.age = age;
         this.cip = cip;
+        this.phone = phone;
         this.sex = sex;
         this.help = help;
         this.helpType = helpType;
@@ -149,5 +151,13 @@ public class Report {
 
     public void setLocation(LatLng location) {
         Location = location;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
     }
 }

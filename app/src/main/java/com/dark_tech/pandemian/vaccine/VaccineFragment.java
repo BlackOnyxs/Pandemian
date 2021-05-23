@@ -22,11 +22,9 @@ public class VaccineFragment extends Fragment implements View.OnClickListener {
         View view = inflater.inflate(R.layout.fragment_vaccine, container, false);
         Button btnPfi = view.findViewById(R.id.btn_pfitzer);
         Button btnAstra = view.findViewById(R.id.btn_astra);
-        Button btnModern = view.findViewById(R.id.btn_modern);
 
         btnPfi.setOnClickListener(this);
         btnAstra.setOnClickListener(this);
-        btnModern.setOnClickListener(this);
 
         return view;
     }
@@ -40,9 +38,6 @@ public class VaccineFragment extends Fragment implements View.OnClickListener {
                 break;
             case R.id.btn_pfitzer:
                 vaccineType = 1;
-                break;
-            case R.id.btn_modern:
-                vaccineType = 2;
                 break;
         }
         DetailFragment fragment = new DetailFragment(vaccineType);

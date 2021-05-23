@@ -26,14 +26,18 @@ public class PersonalFragment extends Fragment {
         Button btn = view.findViewById(R.id.btn_next);
         final AppCompatEditText edtName = view.findViewById(R.id.edtName);
         final AppCompatEditText edtCip = view.findViewById(R.id.edtCid);
+        final AppCompatEditText edtPhone = view.findViewById(R.id.edtPhone);
+
         final ReportSingleton reportSingleton = ReportSingleton.getInstance();
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if ( Utils.verifiedField(edtName, getContext()) && Utils.verifiedField(edtCip,getContext()) ){
+                if ( Utils.verifiedField(edtName, getContext()) && Utils.verifiedField(edtCip,getContext()) && Utils.verifiedField(edtPhone,getContext())){
                     Report report = new Report();
                     report.setName(edtName.getText().toString().trim());
                     report.setCip(edtCip.getText().toString().trim());
+                    report.setPhone(edtPhone.getText().toString().trim());
+                    reportSingleton.setReport(report);
                     GenderFragment fragment = new GenderFragment();
                     loadFragment( fragment );
                 }

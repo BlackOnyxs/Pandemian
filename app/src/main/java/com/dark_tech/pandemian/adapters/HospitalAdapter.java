@@ -1,6 +1,7 @@
 package com.dark_tech.pandemian.adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,12 +19,10 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
 
     private ArrayList<Location> locations;
     private HospitalClickLister listener;
-    private Context context;
 
-    public HospitalAdapter(ArrayList<Location> locations, HospitalClickLister listener, Context context) {
+    public HospitalAdapter(ArrayList<Location> locations, HospitalClickLister listener) {
         this.locations = locations;
         this.listener = listener;
-        this.context = context;
     }
 
     @NonNull
@@ -39,6 +38,7 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
 
         if (lo.getNickName() != null){
             holder.tvName.setText(lo.getNickName());
+            Log.i("LoJkk", lo.getNickName());
         }
 
         holder.onClick(lo, listener);

@@ -12,7 +12,7 @@ import com.dark_tech.pandemian.pojo.Symptom;
 import java.util.ArrayList;
 
 public class Utils {
-    public static boolean verifyReport(AppCompatEditText edtName, AppCompatEditText edtCid, Context context){
+/*    public static boolean verifyReport(AppCompatEditText edtName, AppCompatEditText edtCid, Context context){
         boolean isValid = true;
         if (edtName.getText().toString().trim().isEmpty()){
             edtName.setError(context.getString(R.string.data_required_error));
@@ -24,6 +24,8 @@ public class Utils {
         }
         return isValid;
     }
+    */
+
     public static boolean verifiedField( AppCompatEditText edt, Context context ) {
         boolean isValid = true;
         if ( edt.getText().toString().trim().isEmpty() ) {
@@ -54,28 +56,28 @@ public class Utils {
         return symptoms;
     }
 
-    public static ArrayList<Location> getHospitals(){
-        ArrayList<Location> locations = new ArrayList<>();
-
-        Location c = new Location();
-        c.setNickName("Luis 'Chicho' Fábrega");
-        c.setAbout("Some description");
-        c.setLocation(new LatLng(8.077881, -80.931284));
-
-        Location d = new Location();
-        d.setNickName("Columbia");
-        d.setAbout("Some description");
-        d.setLocation(new LatLng(8.077881, -80.931284));
-
-        Location e = new Location();
-        e.setNickName("Example");
-        e.setAbout("Some description");
-        e.setLocation(new LatLng(8.077881, -80.931284));
-
-        locations.add(c);
-        locations.add(d);
-        locations.add(e);
-
-        return locations;
-    }
+//    public static ArrayList<Location> getHospitals(){
+//        ArrayList<Location> locations = new ArrayList<>();
+//
+//        Location c = new Location();
+//        c.setNickName("Luis 'Chicho' Fábrega");
+//        c.setAbout("Some description");
+//        c.setLocation(new LatLng(8.077881, -80.931284));
+//
+//        Location d = new Location();
+//        d.setNickName("Columbia");
+//        d.setAbout("Some description");
+//        d.setLocation(new LatLng(8.077881, -80.931284));
+//
+//        Location e = new Location();
+//        e.setNickName("Example");
+//        e.setAbout("Some description");
+//        e.setLocation(new LatLng(8.077881, -80.931284));
+//
+//        locations.add(c);
+//        locations.add(d);
+//        locations.add(e);
+//
+//        return locations;
+//    }
 }

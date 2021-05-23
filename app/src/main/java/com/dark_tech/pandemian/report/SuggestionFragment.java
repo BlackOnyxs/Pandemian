@@ -40,7 +40,7 @@ public class SuggestionFragment extends Fragment {
                 reportSingleton.getReport().setVaccineStatus(rbNo.isChecked());
                 reportSingleton.getReport().setVaccineInterest(rbYes2.isChecked());
                 if ( rbYes2.isChecked() ){
-                    fragment = new VaccineWebFragment();
+                    fragment = new VaccineWebFragment("https://www.panamasolidario.gob.pa/pag/vacunas");
                 }else{
                     fragment = new PersonalFragment();
                 }

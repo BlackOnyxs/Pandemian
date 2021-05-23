@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.dark_tech.pandemian.HospitalSingleton;
 import com.dark_tech.pandemian.R;
@@ -32,10 +34,16 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_maps, container, false);
+        TextView tvName = view.findViewById(R.id.tvName);
+        TextView tvPhone = view.findViewById(R.id.tvPhone);
+        ImageView ivHospital = view.findViewById(R.id.ivHospital);
 
         singleton = HospitalSingleton.getInstance();
         if (singleton.getLocation() != null){
             hospital = singleton.getLocation();
+            tvName.setText(hospital.getNickName());
+            tvPhone.setText(getContext().getString(R.string.hospital_phone, hospital.getPhone()));
+            ivHospital.setImageDrawable(hospital.getRef());
         }
         return view;
     }
@@ -59,6 +67,7 @@ public class MapsFragment extends Fragment implements OnMapReadyCallback {
             LatLng hospitalLocation = new LatLng(hospital.getLocation().getLat(), hospital.getLocation().getLng());
             MarkerOptions markerOptions = new MarkerOptions();
             markerOptions.position(hospitalLocation);
+            markerOptions.title(hospital.getNickName());
             googleMap.addMarker(markerOptions);
             CameraPosition position = CameraPosition.fromLatLngZoom(hospitalLocation, 15);
             googleMap.moveCamera(CameraUpdateFactory.newCameraPosition(position));
